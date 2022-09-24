@@ -42,7 +42,18 @@ npm install react-paypal-button-v2 --force
 para la instalacion del proyecto en firebase
 le damos firabase login
 firebase login
+github action para desplegar automaticamente los recursos en firebase
 
+Dominios en namecheap
+cloudflare sirve para administrar mis dominios
+
+para conectar el dominio comprado en firabase es en añadir dominio personalizado
+
+
+para el seo  Esto HEMLMET nos sirve para manejar mejor nuestras etiquetas
+instalar npm i react-helmet --save
+
+1//05QN3qIqQkLDeCgYIARAAGAUSNwF-L9Ir6VEGVJuinH4-teIBlxVfavv3HqyT-6H3hYL8saLZf8lS6ydnDNwWTuWU0u2EUExWxYA
 
 instalacion de google maps
 
