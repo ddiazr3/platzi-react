@@ -39,6 +39,11 @@ Instalacion de paypal
 npm i @paypal/react-paypal-js
 npm install react-paypal-button-v2 --force
 
+para la instalacion del proyecto en firebase
+le damos firabase login
+firebase login
+
+
 instalacion de google maps
 
 import React from 'react'
