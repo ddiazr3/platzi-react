@@ -1,0 +1,88 @@
+Pasos que se realizaron en este proyecto como profecional
+
+- Git init
+- npm init -y (se configurar desede 0 sin ningun paquete preinstalado)
+- npm install react react-dom
+- npm i webpack webpack-cli webpack-dev-server --save-dev
+ (configurando el compilado con webpack)
+- npm i html-webpack-plugin html-loader (estos archivos nos sirve para cuando vaya a produccion)
+- npm install @babel/core @babel/preset-env @babel/preset-react babel-loader --save-dev
+ (babel sirve para compilar el codigo y pueda ser interpretado en cualquier navegador)
+
+ Configuracion de webpack
+
+{
+  "presets": [
+    "@babel/preset-env", //compila ec-6
+    "@babel/preset-react" // isx y typescrips
+  ]
+}
+
+webpack par que pueda leer los css
+npm i css-loader mini-css-extract-plugin --save--dev
+
+configuracion pruebas de error y tener mejor estandar del proyecto
+ESlint instalar de forma global npm i -g eslint
+npm i eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+
+archivo de configuracion
+
+prettier // garantiza un standar
+
+justky
+
+para instalar el router npm i react-router-dom --save
+
+CustomHooks
+
+Instalacion de paypal
+npm i @paypal/react-paypal-js
+npm install react-paypal-button-v2 --force
+
+instalacion de google maps
+
+import React from 'react'
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
+const PaypalPay = () => {
+  return (
+    <PayPalScriptProvider
+      options={{
+        "client-id": process.env.REACT_APP_PAYPAL_ID,
+        currency: "USD",
+      }}>
+
+<PayPalButtons
+        style={{ layout: "vertical" }}
+        disabled={false}
+        createOrder={(data, actions) =>
+          actions.order
+            .create({
+              purchase_units: [
+                {
+                  amount: {
+                    value: Number.parseFloat(handleSumTotal()).toFixed(2),
+                  },
+                },
+              ],
+            })
+            .then((orderId) => {
+              return orderId;
+            })
+        }
+        onApprove={(data, actions) => {
+          return actions.order
+            .capture()
+            .then((data) => {
+              // Your code here after capture the
+              paymentHandleSuccess(data);
+            })
+            .catch((error) => console.log(error));
+        }}
+      />
+    </PayPalScriptProvider>
+
+  )
+}
+
+export default PaypalPay
